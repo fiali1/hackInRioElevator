@@ -43,26 +43,29 @@ export function SignUp() {
        <View style={styles.signUpBar}>
         <Text style={styles.signUpBarTitle}>Cadastrar</Text>
       </View>
-      <View style={styles.signUpContainer}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.header}>Entre ou Cadastre-se no Elevator</Text>
+      <View style={styles.formContainer}>
+        <View style={styles.formSection}>
+          <View style={styles.formSectionTitle}>
+            <Text>Dados de Acesso</Text>
+          </View>  
+          <Input name="email" placeholder="E-mail" control={control} />
+          <Input name="password" placeholder="Senha" control={control} />
+          <Input name="passwordConfirm" placeholder="Confirme a senha" control={control} />
         </View>
-        <View style={styles.formContainer}>
-          <View>
-            <View>
-              </View>  
-            <Input name="email" placeholder="E-mail" control={control} />
-            <Input name="password" placeholder="Senha" control={control} />
-            <Input name="passwordConfirm" placeholder="Confirmar senha" control={control} />
-            <Input name="passwordConfirm" placeholder="Confirmar senha" control={control} />
-          </View>
-          <TouchableOpacity style={{ width: '100%' }}>
-            <Button color="#006eff" onPress={() => {}} title="Login" />
-          </TouchableOpacity>
+        <View style={styles.formSection}>
+          <View style={styles.formSectionTitle}>
+            <Text>Informações de perfil</Text>
+          </View>  
+          <Input name="profileType" placeholder="Tipo de Perfil" control={control} />
+          <Input name="name" placeholder="Nome" control={control} />
+          <Input name="position" placeholder="Cargo/Função" control={control} />
+          <Input name="city" placeholder="Cidade" control={control} />
+          <Input name="state" placeholder="Estado" control={control} />
+          <Input name="linkedin" placeholder="LinkedIn" control={control} />
         </View>
-        <View style={styles.signUpContainer}>
-          <Button color="#505064" onPress={() => {}} title="Cadastre-se" />
-        </View>
+        <TouchableOpacity style={{ width: '100%' }}>
+          <Button color="#006eff" onPress={onSubmit} title="Avançar" />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -73,7 +76,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-between',
   },
   signUpBar: {
     fontSize: 24,
@@ -94,23 +96,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
   },
-  headerContainer: {
-    width: '100%',
-    paddingVertical: '1rem',
-    textAlign: 'center',
-    marginBottom: '3rem',
-  },
-  header: {
-    flex: 1,
-    fontSize: 34,
-    fontWeight: '700',
-  },
   formContainer: {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: '1rem',
+    padding: '2rem',
+  },
+  formSection: {
+    width: '100%', 
+    marginBottom: '2rem',
+  },
+  formSectionTitle: {
+    fontSize: 20,
+    fontWeight: '500',
+    width: '100%',
     marginBottom: '1rem',
   },
   formItem: {

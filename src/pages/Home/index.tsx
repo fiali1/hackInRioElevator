@@ -1,76 +1,53 @@
 import React from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import { BsFilter, BsPersonCircle, BsPersonFill, BsHeartFill, BsFillBookmarkFill, BsBookmarkPlusFill, BsShareFill, BsFillHouseFill } from 'react-icons/bs';
+import { PitchItem } from '../../components/PitchItem';
 
-import { StyleSheet, Text, View } from 'react-native';
+const pitches = [
+  {
+    id: 0,
+    title: 'Consultoria Sustentável',
+    author: {
+      name: 'UFABC',
+      city: 'Santo André',
+      state: 'SP',
+    },
+  },
+  {
+    id: 1,
+    title: 'Indústria Sustentável',
+    author: {
+      name: 'UFABC',
+      city: 'São Bernardo do Campo',
+      state: 'SP',
+    },
+  },
+];
 
 export function Home() {
   return (
-    <View style={styles.container}>
-      <View style={styles.homeBar}>
-        <Text style={styles.homeBarTitle}>Explorar</Text>
-        <BsFilter />
-      </View>
-      <View style={styles.pitchContainer}>
-        <Text style={styles.pitchTitle}>Consultoria Sustentável</Text>
-        <View style={styles.pitchMenu}>
-          <View style={styles.pitchMenuInfo}>
-            <BsPersonCircle size={30} />
-            <View style={styles.pitchMenuInfoUser}>
-              <Text style={styles.pitchMenuItem}>UFABC</Text>
-              <Text style={styles.pitchMenuItem}>Santo André - SP</Text>
-            </View>
-          </View>
-          <View style={styles.pitchMenuFunctions}>
-            <Text>100K</Text>
-            <View style={styles.iconContainer}><BsHeartFill /></View>
-            <View style={styles.iconContainer}><BsBookmarkPlusFill /></View>
-            <View style={styles.iconContainer}><BsShareFill /></View>
-          </View>
-        </View>
-      </View>
-      <View style={styles.navBar}>
-        <View style={styles.navBarItem}>
-          <BsFillHouseFill size={20} />
-          <Text>Home</Text>
-        </View>
-        <View style={styles.navBarItem}>
-          <BsFillBookmarkFill size={20} />
-          <Text>Favoritos</Text>
-        </View>
-        <View style={styles.navBarItem}>
-          <BsPersonFill size={30}/>
-          <Text>Meu Perfil</Text>
-        </View>
-      </View>
-    </View>
+    <ScrollView style={styles.container}>
+      {pitches.map(pitch => (
+        <PitchItem key={pitch.id} id={pitch.id} title={pitch.title} author={pitch.author} />
+      ))}
+      <View style={styles.bottomSpacing}></View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: "80vh",
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  homeBar: {
-    fontSize: 24,
-    height: '4rem',
-    width: '100%',
-    paddingHorizontal: '2rem',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottomWidth: 1,
-  },
-  homeBarTitle: {
-    fontSize: 24,
+    // alignItems: 'center',
+    // justifyContent: 'space-between',
   },
   pitchContainer: {
+    borderWidth: 1,
+    height: '80vh',
     width: '100%',
     padding: '1rem',
-    flex: 1,
     justifyContent: 'space-between',
   },
   pitchTitle: {
@@ -113,21 +90,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderRadius: 25,
   },
-  navBar: {
-    height: '5rem',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: '2rem',
-    paddingVertical: '0.5rem',
-    borderTopWidth: 1,
-  },
-  navBarItem: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+  bottomSpacing: {
+    marginBottom: '10vh',
   }
 });

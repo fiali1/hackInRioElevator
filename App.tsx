@@ -6,6 +6,8 @@ import { Bookmarks } from './src/pages/Bookmarks';
 import { Profile } from './src/pages/Profile';
 import { Login } from './src/pages/Login';
 import { SignUp } from './src/pages/SignUp';
+import { TopBar } from './src/components/TopBar';
+import { NavBar } from './src/components/NavBar';
 
 
 
@@ -30,7 +32,9 @@ const app = initializeApp(firebaseConfig);
 export default function App() {
   return (
     <View style={styles.container}>
-      <SignUp />
+      <TopBar />
+      <Home />
+      <NavBar />
       <StatusBar style="auto" />
     </View>
   );
