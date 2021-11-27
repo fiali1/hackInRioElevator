@@ -4,6 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Home } from './src/pages/Home';
 import { Bookmarks } from './src/pages/Bookmarks';
 import { Profile } from './src/pages/Profile';
+import { Login } from './src/pages/Login';
+import { SignUp } from './src/pages/SignUp';
+
 
 
 // Import the functions you need from the SDKs you need
@@ -27,7 +30,7 @@ const app = initializeApp(firebaseConfig);
 export default function App() {
   return (
     <View style={styles.container}>
-      <Profile />
+      <SignUp />
       <StatusBar style="auto" />
     </View>
   );

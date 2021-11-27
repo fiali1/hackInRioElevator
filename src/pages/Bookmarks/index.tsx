@@ -4,8 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export function Bookmarks() {
   return(
     <View style={styles.container}>
-      <View style={styles.homeBar}>
-        <Text style={styles.homeBarTitle}>Favoritos</Text>
+      <View style={styles.bookmarkBar}>
+        <Text style={styles.bookmarkBarTitle}>Favoritos</Text>
       </View>
       <View style={styles.bookmarksContainer}>
         <View style={styles.bookmarkItem}>
@@ -31,9 +31,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-between',
-    border: '1px solid black',
   },
-  homeBar: {
+  bookmarkBar: {
     fontSize: 24,
     height: '4rem',
     width: '100%',
@@ -41,9 +40,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    border: '1px solid red',
+    borderBottomWidth: 1,
   },
-  homeBarTitle: {
+  bookmarkBarTitle: {
     fontSize: 24,
   },
   bookmarksContainer: {

@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-between',
-    border: '1px solid black',
   },
   homeBar: {
     fontSize: 24,
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    border: '1px solid red',
+    borderBottomWidth: 1,
   },
   homeBarTitle: {
     fontSize: 24,
